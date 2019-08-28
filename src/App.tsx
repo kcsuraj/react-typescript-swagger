@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import * as Api from "typescript-fetch-api";
+
+const petService = new Api.PetApi();
 
 const App: React.FC = () => {
+  const [pets, setPets] = useState<any>({});
+
+  useEffect(() => {
+    getPets();
+  }, []);
+
+  const getPets = async () => {
+    const response = await petService.getPetById({ petId: 1 });
+    setPets(response);
+  };
+
+  console.log(pets);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul>
+        <li>Name: {pets.name}</li>
+        <li>Status: {pets.status}</li>
+      </ul>
     </div>
   );
-}
+};
 
 export default App;
