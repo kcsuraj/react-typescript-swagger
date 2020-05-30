@@ -11,8 +11,6 @@
 **Explaination**
 [Use Swagger to generate API client in Frontend](https://medium.com/@suraj.kc/use-swagger-to-generate-api-client-in-frontend-60b7d65abf31)
 
-## Available Scripts
-
 **Available Scripts**
 
 | Npm Script | Description                                             |
