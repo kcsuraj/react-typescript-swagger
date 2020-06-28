@@ -7,18 +7,19 @@
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
+    "axios": "^0.18.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1",
-    "typescript": "3.5.3",
-    "typescript-fetch-api": "file:gen/api"
+    "react-scripts": "3.4.0",
+    "typescript": "3.8.3",
+    "typescript-axios": "file:gen/api"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "rm -rf gen/api && openapi-generator generate --input-spec swagger.yaml --generator-name typescript-fetch --output gen/api --config api.json && cd gen/api && yarn"
+    "api": "rm -rf gen/api && openapi-generator generate --input-spec swagger.yaml --generator-name typescript-axios --output gen/api --config api.json && cd gen/api && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

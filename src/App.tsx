@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import * as Api from "typescript-fetch-api";
-
-const petService = new Api.PetApi();
+import { apiService } from "./api";
 
 const App: React.FC = () => {
   const [pets, setPets] = useState<any>({});
@@ -11,11 +9,9 @@ const App: React.FC = () => {
   }, []);
 
   const getPets = async () => {
-    const response = await petService.getPetById({ petId: 1 });
+    const response = await apiService.getPetById(1);
     setPets(response);
   };
-
-  console.log(pets);
 
   return (
     <div>

@@ -3,8 +3,9 @@
     "declaration": true,
     "target": "es5",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "noImplicitAny": true,
     "outDir": "dist",
+    "rootDir": ".",
     "lib": [
       "es6",
       "dom"
